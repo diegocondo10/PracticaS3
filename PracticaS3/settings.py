@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import platform
-import pyrebase
 
 system = platform.system()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -131,17 +130,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-
-FIREBASE_CONFIG = {
-    'apiKey': "AIzaSyB-WFvexe__ikzrJoQFdH8yljxRou47NUc",
-    'authDomain': "mrsoft-cf54d.firebaseapp.com",
-    'databaseURL': "https://mrsoft-cf54d.firebaseio.com",
-    'projectId': "mrsoft-cf54d",
-    'storageBucket': "mrsoft-cf54d.appspot.com",
-    'messagingSenderId': "232745846894",
-    "serviceAccount": os.path.join(BASE_DIR, 'key.json')
-}
-
-firebase = pyrebase.initialize_app(FIREBASE_CONFIG)
-FIREBASE_DB = firebase.database()
 
